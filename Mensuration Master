@@ -1,0 +1,35 @@
+# Online Python compiler (interpreter) to run Python online.
+# Write Python 3 code in this online editor and run it.
+import math
+print("Welcome to Mensuration Master, the code that helps you do your mensuration homework")
+q1 = input("What do you want help with? Area or Perimeter: ")
+if(q1 == "Area"):
+    q2 = input("Which figure: ")
+    if(q2 == "circle"):
+        r = float(input("Type radius:"))
+        print("Area =", r * r * (22/7))
+    elif(q2 == "rectangle"):
+        l = float(input("Type rectangle's length:"))
+        b = float(input("Type rectangle's breadth:"))
+        print("Area =", l * b)
+    elif(q2 == "square"):
+        s = float(input("Enter side of square:"))
+        print("Area =", s * s)
+    elif(q2 == "triangle"):
+        q3 = input("Which type of triangle? ")
+        if(q3 == "Equilateral triangle"):
+            ba = float(input("Enter side of Equilateral triangle:"))
+            h = math.sqrt((ba * ba) - ((ba/2) * (ba/2)))
+            print(0.5 * h * ba)
+        elif(q3 == "Isoceles triangle"):
+            bas = float(input("Enter base of Isoceles triangle:"))
+            SS = float(input("Enter the second side of the Isoceles triangle:"))
+            h = math.sqrt((SS * SS) - ((bas/2) * (bas/2)))
+            print(0.5 * h * bas)
+        elif(q3 == "Scalene triangle"):
+            FS = float(input("Enter first side of Scalene triangle:"))
+            Ss = float(input("Enter second side of Scalene triangle:"))
+            Ts = float(input("Enter third side of Scalene triangle:"))
+            s = (FS + Ss + Ts)/2
+            a = math.sqrt(s * (s - FS) * (s - Ss) * (s - Ts))
+            print(a)
