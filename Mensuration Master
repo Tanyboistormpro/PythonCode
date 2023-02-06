@@ -4,9 +4,9 @@ import math
 print("Welcome to Mensuration Master, the code that helps you do your mensuration homework")
 q1 = input("What do you want help with? Area or Perimeter: ")
 if(q1 == "Area"):
-    q2 = input("Which figure: ")
+    q2 = input("Which figure's area you want? ")
     if(q2 == "circle"):
-        r = float(input("Type radius:"))
+        r = float(input("Type radius of the circle:"))
         print("Area =", r * r * (22/7))
     elif(q2 == "rectangle"):
         l = float(input("Type rectangle's length:"))
@@ -33,3 +33,8 @@ if(q1 == "Area"):
             s = (FS + Ss + Ts)/2
             a = math.sqrt(s * (s - FS) * (s - Ss) * (s - Ts))
             print(a)
+elif(q1 == "Perimeter"):
+    q4 = input("Which figure's perimeter you want:")
+    if(q4 == "Circle"):
+        R = float(input("Type radius of the circle:"))
+        print("Perimeter = ", 2 * (22/7) * R)
