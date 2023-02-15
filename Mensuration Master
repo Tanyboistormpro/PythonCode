@@ -38,3 +38,24 @@ elif(q1 == "Perimeter"):
     if(q4 == "Circle"):
         R = float(input("Type radius of the circle:"))
         print("Perimeter = ", 2 * (22/7) * R)
+    elif(q4 == "Square"):
+        SSide = float(input("Type the side of the square:"))
+        print("Perimeter = ", SSide * 4)
+    elif(q4 == "Rectangle"):
+        RLength = float(input("Type the length of the rectangle:"))
+        RBreadth = float(input("Type the breadth of the rectangle:"))
+        print("Perimeter = ", 2 * (RSide * RBreadth))
+    elif(q4 == "Triangle"):
+        q5 = input("Which kind of triangle? : ")
+        if(q5 == "Equilateral trinagle"):
+            ETSide = float(input("Type a side of the Equilateral triangle:"))
+            print("Perimeter = ", ETSide * 3)
+        elif(q5 == "Iscoceles Triangle"):
+            ITSide1 = float(input("Type the equal sides of the triangle:"))
+            ITSide2 = float(input("Type the unequal sides of the triangle:"))
+            print("Perimeter = ", (2 * ITSide1) + ITSide2)
+        elif(q5 == "Scalene Triangle"):
+            STSide1 = float(input("Type the first side of the triangle:"))
+            STSide2 = float(input("Type the second side of the triangle:"))
+            STSide3 = float(input("Type the third side of the triangle:"))
+            print("perimeter == ", STSide1 + STSide2 + STSide3)
