@@ -1,0 +1,17 @@
+# Aim = Collatz Conjecture tester
+print("Welcome to the Collatz Conjecture tester")
+x = int(input("Type in any number to start the process:")) # Initial value
+y = x
+
+while not x == 1: #Creating a while loop to run continuously unitil x = 1 which means the original number obeys the collatze conjectue
+    if(x % 2 == 0):
+        print(x, " is even, so we divide ", x, " by 2 which =", x/2)
+        x = x/2
+        
+    elif(x % 2 == 1):
+        print(x, " is odd, so we multiply ", x, " by 3 and add 1 which = ", (x * 3) + 1)
+        x = (x * 3) + 1
+      
+        
+    if(x == 1):
+        print(y," obeys the Collatz Conjecture")
