@@ -1,0 +1,43 @@
+# 📚 This file contains implementations of various mathematical conjectures I know.
+# 🧮 Use these algorithms as references or building blocks for your own applications.
+# 🚀 Made by me for exploration, learning, and applying math through Python.
+
+
+class mConj:
+    
+    def CollatzConj(x):
+        
+        """
+        Implements the Collatz Conjecture sequence for a given positive integer.
+    
+        Rules:
+        1. If the number is even, divide it by 2.
+        2. If the number is odd, multiply it by 3 and add 1.
+    
+        The conjecture suggests that this process will eventually reach 1.
+    
+        Returns:
+            sequence (list): The list of numbers in the sequence.
+            stepCount (int): The number of steps taken to reach 1.
+        """
+
+        if x <= 0:
+            
+            raise ValueError("Input must be a positive integer.")
+
+        originalValue = x
+        stepCount = 0
+        sequence = [x]  # Start sequence with the initial value
+
+        while x != 1:
+            
+            if x % 2 == 0:
+                x //= 2  # Integer division keeps values as int
+                
+            else:
+                x = 3 * x + 1
+                
+            sequence.append(x)
+            stepCount += 1
+
+        return sequence, stepCount
