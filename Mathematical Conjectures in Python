@@ -8,6 +8,7 @@ import math
 class mConj:
 
     def is_prime(num):
+
         """
         Checks if a given number is prime.
 
