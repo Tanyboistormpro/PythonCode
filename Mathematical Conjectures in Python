@@ -3,8 +3,42 @@
 # 🚀 Made by me for exploration, learning, and applying math through Python.
 
 
+import math
+
 class mConj:
+
+    def is_prime(num):
+        """
+        Checks if a given number is prime.
+
+        Args:
+            num (int): The number to check.
+
+        Returns:
+            bool: True if the number is prime, False otherwise.
+        """
+
+        # 0, 1, and negative numbers are not prime
+        if num <= 1:
+            return False
     
+        # 2 is the only even prime number
+        if num == 2:
+            return True
+
+        # Any other even number is not prime
+        if num % 2 == 0:
+            return False
+
+        # Check only odd divisors up to the square root of num
+        # Skipping even numbers saves time
+        for i in range(3, int(math.sqrt(num)) + 1, 2):
+            if num % i == 0:
+                return False  # Found a divisor → not prime
+
+        return True  # No divisors found → prime
+
+
     def CollatzConj(x):
         
         """
@@ -41,3 +75,43 @@ class mConj:
             stepCount += 1
 
         return sequence, stepCount
+
+    def GoldbachConj(num):
+
+        """
+        Implements the Goldbach Conjecture:
+        "Every even integer greater than 2 can be expressed as the sum of two prime numbers."
+
+        Args:
+            num (int): The even integer to test.
+
+        Returns:
+            list or str: A list of prime pair representations (as strings) if found,
+                         or a message if the conjecture fails for this number.
+        """
+    
+        if num <= 2 or num % 2 != 0:
+        
+            raise ValueError("Goldbach's Conjecture applies to even integers greater than 2.")
+
+
+        totient = []        # Will store all numbers from 1 to approximately half of num
+        totalAnswers = []   # Stores valid prime pairs that sum to num
+
+        # Generate all integers from 1 to half of num
+        for i in range(1, num//2 + 1):
+        
+            totient.append(i)
+        
+        # Check each number 'p1' and see if both 'p1' and 'num-p1' are prime
+        for p1 in totient:
+        
+            p2 = num - p1   # We assign num - p1 as p2
+        
+            if is_prime(p1) and is_prime(p2):
+            
+                totalAnswers.append(f"{p1} + {p2}")  # Store the valid prime sum pair
+
+        # Return all found pairs, or a failure message if none found
+
+            return totalAnswers or f"The Goldbach Conjecture does not hold true for {num}"
