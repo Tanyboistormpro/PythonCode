@@ -21,21 +21,27 @@ class mConj:
 
         # 0, 1, and negative numbers are not prime
         if num <= 1:
+
             return False
     
         # 2 is the only even prime number
         if num == 2:
+
             return True
 
         # Any other even number is not prime
         if num % 2 == 0:
+
             return False
 
         # Check only odd divisors up to the square root of num
         # Skipping even numbers saves time
         for i in range(3, int(math.sqrt(num)) + 1, 2):
+
             if num % i == 0:
+
                 return False  # Found a divisor → not prime
+
 
         return True  # No divisors found → prime
 
